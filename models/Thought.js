@@ -1,5 +1,5 @@
 //Thought Model
-const {Schema, model, Types} = require ('mogoose');
+const {Schema, model, Types} = require ('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const ThoughtScehma = new Schema ({
@@ -17,7 +17,16 @@ const ThoughtScehma = new Schema ({
     username: {
         type: String,
         required: true
-    }
-})
+    },
+
+    reactions: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'reactionSchema'
+        }
+    ]
+}
+
+);
 
 //Reaction sub document
