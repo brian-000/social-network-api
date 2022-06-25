@@ -1,5 +1,6 @@
 //Thought Model
 const {Schema, model, Types} = require ('mogoose');
+const dateFormat = require('../utils/dateFormat');
 
 const ThoughtScehma = new Schema ({
     thoughtText: {
@@ -7,6 +8,11 @@ const ThoughtScehma = new Schema ({
         required: true,
         minLength: 1,
         maxLength: 200
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+        get: createdAtVal => dateFormat(createdAtVal)
     }
 })
 
