@@ -25,8 +25,22 @@ const ThoughtScehma = new Schema ({
             ref: 'reactionSchema'
         }
     ]
+},
+{
+    toJSON: {
+        virtuals: true,
+        getters: true
+      },
+      id: false
+
 }
 
 );
+
+ThoughtScehma.virtual('reactionCount').get(function(){
+    return this.reactions.length;
+})
+
+
 
 //Reaction sub document
