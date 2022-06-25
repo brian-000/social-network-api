@@ -13,6 +13,10 @@ const ThoughtScehma = new Schema ({
         type: Date,
         default: Date.now,
         get: createdAtVal => dateFormat(createdAtVal)
+    },
+    username: {
+        type: String,
+        required: true
     }
 })
 
