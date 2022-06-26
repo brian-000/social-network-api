@@ -71,3 +71,10 @@ const Thought = model('Thought', ThoughtSchema);
 
 module.exports = Thought;
 
+
+
+
+/*
+ i need to do is figure out post thoughts is not working 
+ then continue after post
+*/
